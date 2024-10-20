@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre toi et moi - V2</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #fff0f5;
+            color: #5d3954;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #b56576;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .selection {
+            margin-bottom: 30px;
+        }
+        label {
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+        select {
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #b56576;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #a0525c;
+        }
+        .question-box {
+            margin-top: 40px;
+            font-size: 1.5em;
+            padding: 20px;
+            background-color: #fde2e4;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #a0525c;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Entre toi et moi</h1>
+    <p>Sélectionnez un thème et l'intensité avant de découvrir une question.</p>
+
+    <div class="selection">
+        <label for="theme">Thème :</label>
+        <select id="theme">
+            <option value="travail">Travail</option>
+            <option value="famille">Famille</option>
+            <option value="quotidien">Quotidien</option>
+            <option value="sexe">Sexe</option>
+            <option value="relations">Relations</option>
+        </select>
+    </div>
+
+    <div class="selection">
+        <label for="intensite">Intensité :</label>
+        <select id="intensite">
+            <option value="1">1 ❤️ (léger)</option>
+            <option value="2">2 ❤️❤️ (modéré)</option>
+            <option value="3">3 ❤️❤️❤️ (profond)</option>
+        </select>
+    </div>
+
+    <button onclick="generateQuestion()">Découvrir une question</button>
+
+    <div class="question-box" id="question-box">
+        <!-- La question sera affichée ici -->
+    </div>
+
+    <footer>
+        Un jeu pour mieux se connaître, avec amour.
+    </footer>
+
+    <script>
+        const questions = {
+            travail: [
+                {text: "Que penses-tu de l'équilibre entre vie professionnelle et vie privée ?", intensite: 1},
+                {text: "Quel est l'objectif professionnel que tu poursuis actuellement ?", intensite: 2},
+                {text: "Quelle compétence aimerais-tu acquérir pour avancer dans ta carrière ?", intensite: 3}
+            ],
+            famille: [
+                {text: "Quelle est la tradition familiale qui te tient le plus à cœur ?", intensite: 1},
+                {text: "Comment vois-tu ta famille évoluer dans le futur ?", intensite: 2},
+                {text: "Quelle est la valeur familiale la plus importante pour toi ?", intensite: 3}
+            ],
+            quotidien: [
+                {text: "Quel est ton rituel préféré du quotidien ?", intensite: 1},
+                {text: "Comment gères-tu les petites frustrations de la vie quotidienne ?", intensite: 2},
+                {text: "Qu'est-ce qui te rend le plus heureux dans ton quotidien ?", intensite: 3}
+            ],
+            sexe: [
+                {text: "Comment préfères-tu exprimer ton affection physique ?", intensite: 1},
+                {text: "Quel fantasme aimerais-tu explorer ensemble ?", intensite: 2},
+                {text: "Comment pouvons-nous améliorer notre intimité physique ?", intensite: 3}
+            ],
+            relations: [
+                {text: "Quel est ton plus beau souvenir de nous ?", intensite: 1},
+                {text: "Qu'est-ce qui te fait te sentir aimé dans notre relation ?", intensite: 2},
+                {text: "Comment penses-tu que nous pouvons renforcer notre lien émotionnel ?", intensite: 3}
+            ]
+        };
+
+        function generateQuestion() {
+            const theme = document.getElementById("theme").value;
+            const intensite = document.getElementById("intensite").value;
+            const filteredQuestions = questions[theme].filter(q => q.intensite == intensite);
+            const randomIndex = Math.floor(Math.random() * filteredQuestions.length);
+            const questionBox = document.getElementById("question-box");
+            questionBox.innerHTML = filteredQuestions[randomIndex].text;
+        }
+    </script>
+
+</body>
+</html>
