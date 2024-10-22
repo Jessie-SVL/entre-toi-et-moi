@@ -140,7 +140,7 @@
             console.log("Thème sélectionné:", theme); // Pour vérifier le thème
 
             const filteredQuestions = questions[theme].filter(q => q.intensite == selectedIntensity);
-            console.log("Questions filtrées:", filteredQuestions); // Vérifie que les questions sont bien filtrées
+            console.log("Questions filtrées pour le thème et l'intensité sélectionnés:", filteredQuestions); // Vérifie que les questions sont bien filtrées
 
             if (filteredQuestions.length === 0) {
                 document.getElementById("question-box").innerHTML = "Aucune question trouvée pour ce thème et cette intensité.";
