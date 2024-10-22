@@ -60,10 +60,16 @@
         </select>
     </div>
 
+    <div class="heart-container">
     <div class="selection">
         <button class="heart-btn" onclick="setIntensity(1)">🤍</button>
+    </div>
+    <div class="selection">
         <button class="heart-btn" onclick="setIntensity(2)">🩷🩷</button>
+    </div>
+    <div class="selection">
         <button class="heart-btn" onclick="setIntensity(3)">❤️❤️❤️</button>
+    </div>
     </div>
 
     <button onclick="generateQuestion()">Découvrir une question</button>
@@ -92,12 +98,69 @@
     {text: "Quel a été ton plus grand accomplissement professionnel ?", intensite: 2},
     {text: "Comment gères-tu le stress au travail ?", intensite: 2},
     {text: "Quel est ton aspect préféré de ton travail ?", intensite: 1},
-    {text: "Si tu pouvais changer une chose dans ton travail, que serait-ce ?", intensite: 3}
+    {text: "Si tu pouvais changer une chose dans ton travail, que serait-ce ?", intensite: 3},
+    {text: "Quelle est la chose dont tu es fier, mais dont tu n'as jamais l'occasion de te vanter ?", intensite: 2},
+    {text: "Préfères-tu avoir plus de temps ou plus d'argent ?", intensite: 1},
+    {text: "Les humains sont-ils meilleurs pour créer ou détruire ?", intensite:1},
 ]
-            famille: [], // Questions "Famille" viendront ici
-            quotidien: [], // Questions "Quotidien" viendront ici
-            sexe: [], // Questions "Sexe" viendront ici
-            relations: [] // Questions "Relations" viendront ici
+            famille: [
+    {text: "Quelle est la tradition familiale qui te tient le plus à cœur ?", intensite: 1},
+    {text: "Comment vois-tu ta famille évoluer dans le futur ?", intensite: 2},
+    {text: "Quelle est la valeur familiale la plus importante pour toi ?", intensite: 3},
+    {text: "Quel souvenir d'enfance te fait sourire ?", intensite: 1},
+    {text: "Quelle leçon importante t'a appris ta famille ?", intensite: 2},
+    {text: "Comment aimerais-tu créer des traditions dans notre futur ?", intensite: 3},
+    {text: "Quelle personne dans ta famille t'a le plus inspiré ?", intensite: 1},
+    {text: "As-tu déjà réfléchi à l'idée d'avoir des enfants, et comment te vois-tu en tant que parent ?", intensite: 2},
+    {text: "Quel rôle la famille joue-t-elle dans ta vie ?", intensite: 2},
+    {text: "Comment aimerais-tu fonder ta propre famille ?", intensite: 3},
+    {text: "Quelle fête familiale as-tu le plus hâte de célébrer chaque année ?", intensite: 1},
+    {text: "Quelles valeurs aimerais-tu transmettre à tes enfants ?", intensite: 3},
+    {text: "Quelle est ta définition de la 'famille idéale' ?", intensite: 2},
+    {text: "Qu'est-ce qui n'a pas changé chez toi depuis ton enfance ?", intensite: 1}
+]
+            quotidien: [
+    {text: "Quel est ton rituel préféré du quotidien ?", intensite: 1},
+    {text: "Comment gères-tu les petites frustrations de la vie quotidienne ?", intensite: 2},
+    {text: "Qu'est-ce qui te rend le plus heureux dans ton quotidien ?", intensite: 3},
+    {text: "Quelle est la chose simple qui illumine ta journée ?", intensite: 1},
+    {text: "Comment fais-tu face aux imprévus du quotidien ?", intensite: 2},
+    {text: "Quel aspect de notre quotidien ensemble te plaît le plus ?", intensite: 3},
+    {text: "As-tu un endroit où tu aimes passer du temps chaque jour ?", intensite: 1},
+    {text: "Comment préfères-tu commencer ta journée ?", intensite: 1},
+    {text: "Comment trouves-tu un équilibre entre les obligations et le plaisir au quotidien ?", intensite: 2},
+    {text: "Quel moment de la journée apprécies-tu le plus ?", intensite: 1},
+    {text: "Comment aimerais-tu passer nos matins ensemble ?", intensite: 2},
+    {text: "Que fais-tu pour te détendre après une journée difficile ?", intensite: 3},
+]
+            sexe: [
+    {text: "Comment préfères-tu exprimer ton affection physique ?", intensite: 1},
+    {text: "Quel fantasme aimerais-tu explorer ensemble ?", intensite: 2},
+    {text: "Comment pouvons-nous améliorer notre intimité physique ?", intensite: 3},
+    {text: "Quel est ton moment préféré pour être intime ?", intensite: 1},
+    {text: "Qu'est-ce qui te fait te sentir proche de moi physiquement ?", intensite: 2},
+    {text: "Comment aimerais-tu que je montre plus d'affection physique ?", intensite: 2},
+    {text: "Quelle nouvelle expérience intime aimerais-tu partager ensemble ?", intensite: 3},
+    {text: "Quelle est la chose la plus tendre que tu aimes que je fasse ?", intensite: 1},
+    {text: "Comment veux-tu que nous parlions plus ouvertement de nos désirs ?", intensite: 3},
+    {text: "Quelle est l'importance de l'attirance physique dans notre relation et comment l'entretenir ?", intensite: 2},
+    {text: "Comment aimerais-tu que nous prenions plus de temps pour l'intimité ?", intensite: 3},
+]
+            relations: [
+    {text: "Quel est ton plus beau souvenir de nous ?", intensite: 1},
+    {text: "Que signifie l'amour pour toi ?", intensite: 2},
+    {text: "Qu'est-ce qui te fait te sentir aimé dans notre relation ?", intensite: 2},
+    {text: "Comment penses-tu que nous pouvons renforcer notre lien émotionnel ?", intensite: 3},
+    {text: "Comment imagines-tu notre mariage si nous décidions de nous marier un jour ?", intensite: 2},
+    {text: "Quelle leçon importante as-tu tirée de tes relations passées que tu aimerais partager avec moi ?", intensite: 3},
+    {text: "Quelle est la chose que tu apprécies le plus dans notre relation ?", intensite: 1},
+    {text: "Quel aspect de notre relation aimerais-tu explorer davantage ?", intensite: 2},
+    {text: "Quelle est la meilleure façon pour toi de montrer ton amour ?", intensite: 3},
+    {text: "Qu'est-ce qui t'a attiré en premier chez moi ?", intensite: 1},
+    {text: "Comment pouvons-nous rendre notre relation encore plus forte ?", intensite: 2},
+    {text: "Quel est l'endroit où tu te sens le plus connecté à moi ?", intensite: 3},
+    {text: "Si nous nous rencontrions à nouveau et que nous recommencions, que ferais-tu différemment ?", intensite: 3}
+]
         };
 
         function setIntensity(intensity) {
